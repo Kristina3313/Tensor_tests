@@ -7,10 +7,7 @@ class TensorPage(BasePage):
 
     @allure.step('Получение заголовка из блока "Сила в людях"')
     def get_text_from_sila_block(self):
-        locator_type, locator_value = tensor_locators.BLOCK_SILA
-        element = self.driver.find_element(locator_type, locator_value)
-        text = element.text
-        return text
+        return self.find_element(tensor_locators.BLOCK_SILA).text
 
     @allure.step('Сколл до блока "Сила в людях"')
     def scroll_to_block_sila(self):

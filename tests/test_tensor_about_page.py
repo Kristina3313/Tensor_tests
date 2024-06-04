@@ -8,7 +8,7 @@ from pages.tensor_page import TensorPage
 
 @allure.story('Тест на странице "Тензор/about"')
 class TestTensorAboutPage:
-
+    # Сценарий №1
     @allure.title('Тест редиректа при клике на кнопку "Подробнее"')
     def test_redirect_to_about_page(self, driver):
         sbis_page = SbisPage(driver)
@@ -21,7 +21,8 @@ class TestTensorAboutPage:
         tensor_page.click_by_about_button()
         assert driver.current_url == 'https://tensor.ru/about'
 
-    @allure.title('Проверка размеров фото в блоке "Работаем"')
+    # Сценарий №1
+    @allure.title('Тест размеров фото в блоке "Работаем"')
     def test_img_size_in_work_block(self, driver):
         sbis_page = SbisPage(driver)
         sbis_page.go_to_site()

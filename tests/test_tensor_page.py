@@ -7,7 +7,7 @@ from pages.tensor_page import TensorPage
 
 @allure.story('Тест на главной странице "Тензор"')
 class TestTensorPage:
-
+    # Сценарий №1
     @allure.title("Наличие блока 'Сила в людях'")
     def test_check_text_from_block(self, driver):
         sbis_page = SbisPage(driver)

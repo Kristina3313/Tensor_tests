@@ -29,7 +29,5 @@ class BasePage:
         element = self.find_element(locator)
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
-    def get_text_from_element(self, locator, time=20):
-        element = WebDriverWait(self.driver, time).until(EC.visibility_of_element_located(locator),
-                                                         message=f'Element not found in {locator}')
-        return element.text
+    def wait_for_url(self, expected_url, timeout=30):
+        WebDriverWait(self.driver, timeout).until(EC.url_to_be(expected_url), f'URL did not change to {expected_url}')
