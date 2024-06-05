@@ -17,4 +17,5 @@ class TestTensorPage:
         sbis_contacts_page.click_by_tensor_banner()
         tensor_page = TensorPage(driver)
         tensor_page.scroll_to_block_sila()
-        assert "Сила в людях" in tensor_page.get_text_from_sila_block()
+        text = tensor_page.get_text_from_sila_block()
+        assert "Сила в людях" in text
